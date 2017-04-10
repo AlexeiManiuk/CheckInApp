@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckInService", "Check_In_Service\CheckInService.csproj", "{D7D6D22A-EFD4-4593-9807-137728C4DA42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckInEF", "CheckInEF\CheckInEF.csproj", "{F29DD498-582A-4A64-8C2A-38B50EE038C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckInInstaller", "CheckInInstaller\CheckInInstaller.csproj", "{19B28FA2-6B7A-4F6F-92E7-A00236B8728B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D7D6D22A-EFD4-4593-9807-137728C4DA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D6D22A-EFD4-4593-9807-137728C4DA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D6D22A-EFD4-4593-9807-137728C4DA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D6D22A-EFD4-4593-9807-137728C4DA42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29DD498-582A-4A64-8C2A-38B50EE038C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29DD498-582A-4A64-8C2A-38B50EE038C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29DD498-582A-4A64-8C2A-38B50EE038C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29DD498-582A-4A64-8C2A-38B50EE038C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19B28FA2-6B7A-4F6F-92E7-A00236B8728B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19B28FA2-6B7A-4F6F-92E7-A00236B8728B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19B28FA2-6B7A-4F6F-92E7-A00236B8728B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19B28FA2-6B7A-4F6F-92E7-A00236B8728B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
