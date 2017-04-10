@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Check_InService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="SetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="val" type="tns:LoginInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="LoginInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Login" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Password" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="SetValueResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="GetValue">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="index" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetValueResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetValueResult" type="tns:LoginInfo" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoginAccess">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="email" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="pass" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LoginAccessResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="LoginAccessResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendMassage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="msg" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="msg2" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="sendMassageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="sendMassageResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCoordinates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="login" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCoordinatesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="GetCoordinatesResult" type="tns:ArrayOfAnyType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="ArrayOfAnyType">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AddNewCoordinates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="lat" type="xs:double" />
+            <xs:element minOccurs="1" maxOccurs="1" name="lon" type="xs:double" />
+            <xs:element minOccurs="0" maxOccurs="1" name="user" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AddNewCoordinatesResponse">
+        <xs:complexType />
+      </xs:element>
+      <xs:element name="SignUpUser">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="log" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="pas" type="xs:string" />
+            <xs:element minOccurs="0" maxOccurs="1" name="mail" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SignUpUserResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" maxOccurs="1" name="SignUpUserResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ICheck_InService_SetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetValue" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_SetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_GetValue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetValue" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_GetValue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_LoginAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAccess" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_LoginAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_sendMassage_InputMessage">
+    <wsdl:part name="parameters" element="tns:sendMassage" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_sendMassage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:sendMassageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_GetCoordinates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoordinates" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_GetCoordinates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoordinatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_AddNewCoordinates_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCoordinates" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_AddNewCoordinates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCoordinatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_SignUpUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpUser" />
+  </wsdl:message>
+  <wsdl:message name="ICheck_InService_SignUpUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignUpUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICheck_InService">
+    <wsdl:operation name="SetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/SetValue" message="tns:ICheck_InService_SetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/SetValueResponse" message="tns:ICheck_InService_SetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/GetValue" message="tns:ICheck_InService_GetValue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/GetValueResponse" message="tns:ICheck_InService_GetValue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/LoginAccess" message="tns:ICheck_InService_LoginAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/LoginAccessResponse" message="tns:ICheck_InService_LoginAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMassage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/sendMassage" message="tns:ICheck_InService_sendMassage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/sendMassageResponse" message="tns:ICheck_InService_sendMassage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoordinates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/GetCoordinates" message="tns:ICheck_InService_GetCoordinates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/GetCoordinatesResponse" message="tns:ICheck_InService_GetCoordinates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCoordinates">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/AddNewCoordinates" message="tns:ICheck_InService_AddNewCoordinates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/AddNewCoordinatesResponse" message="tns:ICheck_InService_AddNewCoordinates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SignUpUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICheck_InService/SignUpUser" message="tns:ICheck_InService_SignUpUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICheck_InService/SignUpUserResponse" message="tns:ICheck_InService_SignUpUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICheck_InService" type="tns:ICheck_InService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SetValue">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/SetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValue">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/GetValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginAccess">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/LoginAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMassage">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/sendMassage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoordinates">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/GetCoordinates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCoordinates">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/AddNewCoordinates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignUpUser">
+      <soap:operation soapAction="http://tempuri.org/ICheck_InService/SignUpUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Check_InService">
+    <wsdl:port name="BasicHttpBinding_ICheck_InService" binding="tns:BasicHttpBinding_ICheck_InService">
+      <soap:address location="http://89.252.8.148:1488/Check_InService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

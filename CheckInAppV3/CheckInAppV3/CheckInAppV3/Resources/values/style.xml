@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <style name="MyTheme.Base" parent="@android:style/Theme.Material.Light">
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="MyTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowNoTitle">true</item>
+  <item name="android:textColorSecondary">#fff44336</item><item name="android:colorButtonNormal">#ffff5252</item><item name="android:colorAccent">#ffff5252</item><item name="android:colorPrimary">#ffff5252</item></style>
+  <style name="MyTheme.Splash" parent="@android:style/Theme.Material.Light">
+    <item name="android:windowBackground">@drawable/splash_screen</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+  <style name="material_button" parent="@android:style/Theme.Material.Light">
+    <item name="colorControlHighlight">@color/light_red</item>
+  </style>
+</resources>

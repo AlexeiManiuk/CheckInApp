@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name ="Login">Login</string>
+  <string name ="SignUp">Create Account</string>
+  <string name="ApplicationName">CheckInApp</string>
+  <string name ="EmailHint">e-mail</string>
+  <string name ="PasswordHint">password</string>
+  <string name ="SignUpEmailHint">Enter e-mail</string>
+  <string name="SignUpPasswordHint">Enter password</string>
+  <string name="SignUpLogin">Enter login</string>
+  
+</resources>
